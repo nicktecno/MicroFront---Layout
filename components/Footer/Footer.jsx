@@ -12,7 +12,6 @@ import FooterSellerSpecs from "../FooterSellerSpecs";
 import { ModalGeneralMultiLang } from "../ModalGeneralMultiLang";
 import { ModalGeneralSandwichMenu } from "../ModalGeneralSandwichMenu";
 
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const FooterComponent = ({
@@ -26,6 +25,7 @@ const FooterComponent = ({
   cartLength,
   lang,
   setLang,
+  footerMktData,
 }) => {
   const [modalMultiLangActive, setModalMultiLangActive] = useState("inactive");
 
@@ -167,6 +167,7 @@ const FooterComponent = ({
       </S.box>
       <S.ContainerFooterSpecs routeWithSpace={routeWithSpace}>
         <FooterSellerSpecs
+          footerMktData={footerMktData}
           generalComponentsTranslation={generalComponentsTranslation}
         />
       </S.ContainerFooterSpecs>

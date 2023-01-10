@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@module-federation/nextjs-mf": "^6.0.1",
-    "algoliasearch": "^4.14.3",
     "axios": "^1.2.2",
     "next": "^13.1.1",
     "react": "18.2.0",
@@ -21,7 +20,6 @@
     "react-instantsearch-dom": "^6.38.1",
     "react-slick": "^0.29.0",
     "react-toastify": "^9.1.1",
-    "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.6",
     "styled-icons": "^10.47.0",
     "styled-media-query": "^2.1.2",

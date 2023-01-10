@@ -13,6 +13,17 @@ const Footer = () => {
     useColorTheme();
   const { cartLength } = useCart();
 
+  const footerMktData = {
+    nameComplete: "Ricardo Eletro - Nordeste Participações SA",
+    address: "Rua Irma Gabriela, 51 - Sl 224 Parte IV",
+    postalCode: "Cep 04.571-130",
+    cnpj: "10.331.096/0001-24",
+    name: "Ricardo Eletro",
+    email: "sac@ricardoeletro.com.br",
+    facebook: "https://google.com",
+    instagram: "https://google.com",
+  };
+
   return (
     <FooterComponent
       cartLength={cartLength}
@@ -25,6 +36,7 @@ const Footer = () => {
       generalComponentsTranslation={generalComponentsTranslation}
       lang={lang}
       setLang={setLang}
+      footerMktData={footerMktData}
     />
   );
 };

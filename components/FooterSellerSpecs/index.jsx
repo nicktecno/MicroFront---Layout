@@ -9,7 +9,7 @@ import * as S from "./styles";
 import Link from "next/link";
 import { ModalFooterTalkToUs } from "../ModalFooterTalkToUs";
 
-const FooterSellerSpecs = ({ generalComponentsTranslation }) => {
+const FooterSellerSpecs = ({ generalComponentsTranslation, footerMktData }) => {
   const [modalTalkActive, setModalTalkActive] = useState("inactive");
 
   return (
@@ -22,13 +22,13 @@ const FooterSellerSpecs = ({ generalComponentsTranslation }) => {
       <S.footerRed>
         <S.ContainerLine1>
           <S.Column1>
-            <h2> Ricardo Eletro - Nordeste Participações SA</h2>
+            <h2>{footerMktData.nameComplete}</h2>
             <p>
-              Rua Irma Gabriela, 51 - Sl 224 Parte IV
+              {footerMktData.address}
               <br />
-              Cep 04.571-130
+              {footerMktData.postalCode}
               <br />
-              CNPJ: 10.331.096/0001-24
+              {footerMktData.cnpj}
               <br />
             </p>
             <a href="https://seller.cazco.digital/register" target="_new">
@@ -41,7 +41,7 @@ const FooterSellerSpecs = ({ generalComponentsTranslation }) => {
               >
                 {generalComponentsTranslation !== false &&
                   generalComponentsTranslation?.footer.labels.label02}{" "}
-                Ricardo Eletro
+                {footerMktData.name}
               </span>
             </a>
           </S.Column1>
@@ -51,7 +51,7 @@ const FooterSellerSpecs = ({ generalComponentsTranslation }) => {
               {generalComponentsTranslation !== false &&
                 generalComponentsTranslation?.footer.labels.label03}
             </h2>
-            <p>sac@ricardoeletro.com.br</p>{" "}
+            <p>{footerMktData.email}</p>{" "}
             <div className="talkToUsBox">
               <a
                 className="talkUs"
@@ -103,10 +103,14 @@ const FooterSellerSpecs = ({ generalComponentsTranslation }) => {
                 generalComponentsTranslation?.footer.labels.label11}
             </h2>
             <div>
-              <a rel="noreferrer" href="https://google.com" target="_blank">
+              <a rel="noreferrer" href={footerMktData.facebook} target="_blank">
                 <S.FaceIcon />
               </a>
-              <a rel="noreferrer" href="https://google.com" target="_blank">
+              <a
+                rel="noreferrer"
+                href={footerMktData.instagram}
+                target="_blank"
+              >
                 <S.InstaIcon />
               </a>
             </div>

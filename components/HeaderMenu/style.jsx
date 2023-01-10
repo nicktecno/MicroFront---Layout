@@ -50,7 +50,7 @@ export const background = styled.div`
   z-index: 998;
   position: fixed;
 
-  ${customMedia.lessThan("notebook")`
+  ${customMedia.lessThan("netbook")`
     
     display: none;
   `}
@@ -68,8 +68,6 @@ export const modal = styled.div`
 
   min-height: 273px;
   width: 100%;
-
-  /* max-width: 1200px; */
 
   background-color: var(--default-color-hover);
 

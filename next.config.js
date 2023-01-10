@@ -11,11 +11,7 @@ const nextConfig = {
     config.plugins.push(
       new NextFederationPlugin({
         name: "main",
-        remotes: {
-          shop: `shop@http://localhost:3001/_next/static/${
-            isServer ? "ssr" : "chunks"
-          }/remoteEntry.js`,
-        },
+        remotes: {},
         filename: "static/chunks/remoteEntry.js",
         exposes: {
           // "./home": "./PagesComponents/Home/Home.jsx",

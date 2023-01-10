@@ -5,10 +5,12 @@ import * as S from "./style";
 const HeaderMenu = ({ menu, menuState, setMenuState, setModal }) => {
   const [selectedItem, setSelectedItem] = useState([]);
 
+  const menuFiltered = menu.filter((filt) => filt.name !== "Root").slice(0, 4);
+
   const handleClick = (itemId) => {
     setMenuState(selectedItem[0]?.id === itemId && menuState ? false : true);
     setModal(false);
-    const InDisplayItem = menu?.slice(0, 4).filter(({ id }) => {
+    const InDisplayItem = menuFiltered.filter(({ id }) => {
       return id === itemId;
     });
     setSelectedItem(InDisplayItem);
@@ -18,7 +20,6 @@ const HeaderMenu = ({ menu, menuState, setMenuState, setModal }) => {
     window.location.href = url;
   }
 
-  const menuFiltered = menu.filter((filt) => filt.name !== "Root").slice(0, 4);
   return (
     <>
       <S.menu>
@@ -42,7 +43,6 @@ const HeaderMenu = ({ menu, menuState, setMenuState, setModal }) => {
             );
           })}
       </S.menu>
-
       {menuState && (
         <S.background onClick={() => setMenuState(false)}>
           <S.modal>
@@ -55,11 +55,11 @@ const HeaderMenu = ({ menu, menuState, setMenuState, setModal }) => {
                     )
                   }
                 >
-                  Confira tudo para {selectedItem[0].name.toUpperCase()}
+                  Confira tudo para {selectedItem[0]?.name.toUpperCase()}
                 </h2>
                 <div>
                   <section>
-                    {selectedItem[0].children?.map((i, index) => {
+                    {selectedItem[0]?.children?.map((i, index) => {
                       return (
                         <h4
                           key={index}
