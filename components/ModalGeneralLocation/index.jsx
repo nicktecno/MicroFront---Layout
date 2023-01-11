@@ -25,6 +25,7 @@ function ModalGeneralLocation({
   setAtualizarModalPagina,
   generalComponentsTranslation,
   setCartLength,
+  mktName,
 }) {
   const [cep, setCep] = useState("");
   const [show, setShow] = useState(false);
@@ -95,7 +96,7 @@ function ModalGeneralLocation({
       );
 
       localStorage.setItem(
-        `${process.env.NEXT_PUBLIC_REACT_APP_NAME}_location`,
+        `${mktName}_location`,
         JSON.stringify(morphLocation)
       );
 
@@ -194,9 +195,7 @@ function ModalGeneralLocation({
     };
 
     try {
-      const token = localStorage.getItem(
-        process.env.NEXT_PUBLIC_REACT_APP_NAME
-      );
+      const token = localStorage.getItem(mktName);
       if (token) {
         api.defaults.headers.Authorization = `Bearer ${token}`;
       } else {
@@ -243,9 +242,7 @@ function ModalGeneralLocation({
     };
 
     try {
-      const token = localStorage.getItem(
-        process.env.NEXT_PUBLIC_REACT_APP_NAME
-      );
+      const token = localStorage.getItem(mktName);
       if (token) {
         api.defaults.headers.Authorization = `Bearer ${token}`;
       } else {
@@ -318,9 +315,7 @@ function ModalGeneralLocation({
 
   async function getEnderecos() {
     try {
-      const token = localStorage.getItem(
-        process.env.NEXT_PUBLIC_REACT_APP_NAME
-      );
+      const token = localStorage.getItem(mktName);
       if (token) {
         api.defaults.headers.Authorization = `Bearer ${token}`;
       } else {
@@ -337,9 +332,7 @@ function ModalGeneralLocation({
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const token = localStorage.getItem(
-        process.env.NEXT_PUBLIC_REACT_APP_NAME
-      );
+      const token = localStorage.getItem(mktName);
 
       if (token) {
         api.defaults.headers.Authorization = `Bearer ${token}`;
@@ -510,10 +503,7 @@ function ModalGeneralLocation({
           .notificationSuccess01,
         "success"
       );
-      localStorage.setItem(
-        `${process.env.NEXT_PUBLIC_REACT_APP_NAME}_location`,
-        JSON.stringify(response)
-      );
+      localStorage.setItem(`${mktName}_location`, JSON.stringify(response));
       setLocalizacao(response);
       setTimeout(fechaModal, 2500);
       setLocalizado(true);

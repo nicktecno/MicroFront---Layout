@@ -24,8 +24,13 @@ const Footer = () => {
     instagram: "https://google.com",
   };
 
+  const mktName = process.env.NEXT_PUBLIC_REACT_APP_NAME;
+  const appUrl = process.env.NEXT_PUBLIC_REACT_APP_URL;
+
   return (
     <FooterComponent
+      appUrl={appUrl}
+      mktName={mktName}
       cartLength={cartLength}
       openMenu={openMenu}
       setOpenMenu={setOpenMenu}

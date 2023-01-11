@@ -26,6 +26,8 @@ const FooterComponent = ({
   lang,
   setLang,
   footerMktData,
+  mktName,
+  appUrl,
 }) => {
   const [modalMultiLangActive, setModalMultiLangActive] = useState("inactive");
 
@@ -60,7 +62,7 @@ const FooterComponent = ({
 
   useEffect(() => {
     getMenu();
-    if (localStorage.getItem(process.env.NEXT_PUBLIC_REACT_APP_NAME)) {
+    if (localStorage.getItem(mktName)) {
       setLogged(true);
     } else {
       setLogged(false);
@@ -120,6 +122,7 @@ const FooterComponent = ({
         generalComponentsTranslation={generalComponentsTranslation}
         lang={lang}
         setLang={setLang}
+        mktName={mktName}
       />
       {openMenu &&
         generalComponentsTranslation !== false &&
@@ -167,6 +170,7 @@ const FooterComponent = ({
       </S.box>
       <S.ContainerFooterSpecs routeWithSpace={routeWithSpace}>
         <FooterSellerSpecs
+          appUrl={appUrl}
           footerMktData={footerMktData}
           generalComponentsTranslation={generalComponentsTranslation}
         />

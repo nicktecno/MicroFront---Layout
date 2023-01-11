@@ -6,12 +6,10 @@ export function ModalGeneralMultiLang({
   generalComponentsTranslation,
   lang,
   setLang,
+  mktName,
 }) {
   function handleLanguage(language) {
-    localStorage.setItem(
-      `${process.env.NEXT_PUBLIC_REACT_APP_NAME}_language`,
-      language
-    );
+    localStorage.setItem(`${mktName}_language`, language);
     setLang(language);
   }
 

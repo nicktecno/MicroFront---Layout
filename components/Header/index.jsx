@@ -21,8 +21,11 @@ const Header = () => {
     setAtualizarModalPagina,
   } = useLocation();
   const { cartLength, setCartLength } = useCart();
+
+  const mktName = process.env.NEXT_PUBLIC_REACT_APP_NAME;
   return (
     <HeaderComponent
+      mktName={mktName}
       api={api}
       cartLength={cartLength}
       openMenu={openMenu}

@@ -9,7 +9,11 @@ import * as S from "./styles";
 import Link from "next/link";
 import { ModalFooterTalkToUs } from "../ModalFooterTalkToUs";
 
-const FooterSellerSpecs = ({ generalComponentsTranslation, footerMktData }) => {
+const FooterSellerSpecs = ({
+  generalComponentsTranslation,
+  footerMktData,
+  appUrl,
+}) => {
   const [modalTalkActive, setModalTalkActive] = useState("inactive");
 
   return (
@@ -144,7 +148,7 @@ const FooterSellerSpecs = ({ generalComponentsTranslation, footerMktData }) => {
             <div className="containerStamps">
               <img src="/images/iconCrypto.png" alt="icon" />
               <a
-                href={`https://transparencyreport.google.com/safe-browsing/search?url=${process.env.NEXT_PUBLIC_REACT_APP_URL}&hl=pt_BR`}
+                href={`https://transparencyreport.google.com/safe-browsing/search?url=${appUrl}&hl=pt_BR`}
                 target="_blank"
                 rel="noreferrer"
               >

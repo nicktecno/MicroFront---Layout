@@ -34,6 +34,7 @@ const HeaderComponent = ({
   setAtualizarModalPagina,
   generalComponentsTranslation,
   setCartLength,
+  mktName,
 }) => {
   const router = useRouter();
 
@@ -86,9 +87,7 @@ const HeaderComponent = ({
   }, [modal]);
 
   useEffect(() => {
-    if (
-      localStorage.getItem(`${process.env.NEXT_PUBLIC_REACT_APP_NAME}_username`)
-    ) {
+    if (localStorage.getItem(`${mktName}_username`)) {
       setLogged(true);
     } else {
       setLogged(false);
@@ -114,6 +113,7 @@ const HeaderComponent = ({
     <>
       {modalMultiLangActive && (
         <ModalGeneralMultiLang
+          mktName={mktName}
           modalMultiLangActive={modalMultiLangActive}
           setModalMultiLangActive={setModalMultiLangActive}
           generalComponentsTranslation={generalComponentsTranslation}
@@ -128,6 +128,7 @@ const HeaderComponent = ({
             <S.transparente onClick={() => fechaModal()} />
 
             <ModalGeneralLocation
+              mktName={mktName}
               api={api}
               logged={logged}
               localizado={localizado}
@@ -271,9 +272,7 @@ const HeaderComponent = ({
                     <span className="nomeHeader">
                       Olá!
                       <br />
-                      {localStorage.getItem(
-                        `${process.env.NEXT_PUBLIC_REACT_APP_NAME}_username`
-                      )}
+                      {localStorage.getItem(`${mktName}_username`)}
                     </span>
                   </Link>
                 </div>
