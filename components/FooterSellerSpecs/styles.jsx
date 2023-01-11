@@ -339,6 +339,7 @@ export const ContainerLine1 = styled.div`
   display: flex;
   justify-content: center;
   width: 90%;
+  position: relative;
   max-width: 1920px;
   gap: 20px;
 
@@ -351,20 +352,24 @@ export const ContainerLine1 = styled.div`
 
 export const Column1 = styled.div`
   display: flex;
+  width: 280px;
   flex-direction: column;
 `;
 
 export const Column2 = styled.div`
   display: flex;
+  width: 180px;
   flex-direction: column;
 `;
 export const Column3 = styled.div`
   display: flex;
+  width: 180px;
   gap: 5px;
   flex-direction: column;
 `;
 export const Column4 = styled.div`
   display: flex;
+  width: 170px;
   flex-direction: column;
 `;
 
