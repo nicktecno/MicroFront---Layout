@@ -35,6 +35,8 @@ const HeaderComponent = ({
   generalComponentsTranslation,
   setCartLength,
   mktName,
+  envGeo,
+  envMsLocation,
 }) => {
   const router = useRouter();
 
@@ -119,6 +121,8 @@ const HeaderComponent = ({
           generalComponentsTranslation={generalComponentsTranslation}
           lang={lang}
           setLang={setLang}
+          envGeo={envGeo}
+          envMsLocation={envMsLocation}
         />
       )}
 

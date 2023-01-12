@@ -26,6 +26,8 @@ function ModalGeneralLocation({
   generalComponentsTranslation,
   setCartLength,
   mktName,
+  envGeo,
+  envMsLocation,
 }) {
   const [cep, setCep] = useState("");
   const [show, setShow] = useState(false);
@@ -55,7 +57,7 @@ function ModalGeneralLocation({
         `https://viacep.com.br/ws/${cep}/json`
       );
 
-      Geocode.setApiKey(process.env.NEXT_PUBLIC_REACT_APP_GOOGLE_MAPS_API_KEY);
+      Geocode.setApiKey(envGeo);
 
       Geocode.setLanguage("pt-br");
 
@@ -121,7 +123,7 @@ function ModalGeneralLocation({
       const { data: response } = await axios.get(
         `https://viacep.com.br/ws/${cep}/json`
       );
-      Geocode.setApiKey(process.env.NEXT_PUBLIC_REACT_APP_GOOGLE_MAPS_API_KEY);
+      Geocode.setApiKey(envGeo);
 
       Geocode.setLanguage("pt-br");
 
@@ -346,7 +348,7 @@ function ModalGeneralLocation({
 
   const handleLocation = () => {
     setLoadingLocation(true);
-    const url = process.env.NEXT_PUBLIC_REACT_APP_MS_LOCATION;
+    const url = envMsLocation;
     try {
       navigator.geolocation.getCurrentPosition(async (position) => {
         const { latitude, longitude } = position.coords;
@@ -359,10 +361,7 @@ function ModalGeneralLocation({
           }
         );
 
-        localStorage.setItem(
-          `${process.env.NEXT_PUBLIC_REACT_APP_NAME}_location`,
-          JSON.stringify(response)
-        );
+        localStorage.setItem(`${mktName}_location`, JSON.stringify(response));
         setLocalizacao(response);
 
         notification(
@@ -381,7 +380,7 @@ function ModalGeneralLocation({
 
   const handleCadastrarLocalizacaoAtual = () => {
     setLoading(true);
-    const url = process.env.NEXT_PUBLIC_REACT_APP_MS_LOCATION;
+    const url = envMsLocation;
 
     navigator.geolocation.getCurrentPosition(async (position) => {
       const { latitude, longitude } = position.coords;
@@ -404,7 +403,7 @@ function ModalGeneralLocation({
   };
 
   async function getCep() {
-    const url = process.env.NEXT_PUBLIC_REACT_APP_MS_LOCATION;
+    const url = envMsLocation;
     const dataCep = {
       postalcode: cep.replace("-", ""),
       country: "BR",
@@ -435,7 +434,7 @@ function ModalGeneralLocation({
     setLoadingLocation(true);
     removeLocation();
 
-    const url = process.env.NEXT_PUBLIC_REACT_APP_MS_LOCATION;
+    const url = envMsLocation;
 
     const dataCep = {
       postalcode:
@@ -480,7 +479,7 @@ function ModalGeneralLocation({
     e.preventDefault();
     removeLocation();
 
-    const url = process.env.NEXT_PUBLIC_REACT_APP_MS_LOCATION;
+    const url = envMsLocation;
     const dataCep = {
       postalcode: cep.replace("-", ""),
       country: "BR",
