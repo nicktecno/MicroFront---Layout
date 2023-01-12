@@ -352,13 +352,13 @@ export const ContainerLine1 = styled.div`
 
 export const Column1 = styled.div`
   display: flex;
-  width: 280px;
+  width: 260px;
   flex-direction: column;
 `;
 
 export const Column2 = styled.div`
   display: flex;
-  width: 180px;
+  width: 190px;
   flex-direction: column;
 `;
 export const Column3 = styled.div`
@@ -369,7 +369,7 @@ export const Column3 = styled.div`
 `;
 export const Column4 = styled.div`
   display: flex;
-  width: 170px;
+  width: 180px;
   flex-direction: column;
 `;
 
