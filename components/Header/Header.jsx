@@ -121,8 +121,6 @@ const HeaderComponent = ({
           generalComponentsTranslation={generalComponentsTranslation}
           lang={lang}
           setLang={setLang}
-          envGeo={envGeo}
-          envMsLocation={envMsLocation}
         />
       )}
 
@@ -148,6 +146,8 @@ const HeaderComponent = ({
               setAtualizarModalPagina={setAtualizarModalPagina}
               generalComponentsTranslation={generalComponentsTranslation}
               setCartLength={setCartLength}
+              envGeo={envGeo}
+              envMsLocation={envMsLocation}
             />
           </S.local>
         </S.modal1>
