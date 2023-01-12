@@ -5,6 +5,7 @@ import { useCart } from "../../Context/CartLengthContext";
 import { useMenu } from "../../Context/Menu";
 import { useColorTheme } from "../../Context/ColorTheme";
 import { useLang } from "../../Context/LangContext";
+import api from "../../services/api";
 
 const Footer = () => {
   const { openMenu, setOpenMenu } = useMenu();
@@ -42,6 +43,7 @@ const Footer = () => {
       lang={lang}
       setLang={setLang}
       footerMktData={footerMktData}
+      api={api}
     />
   );
 };

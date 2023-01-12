@@ -6,7 +6,6 @@ import ColorPicker from "../ColorPicker";
 
 import * as S from "./style";
 
-import api from "../../services/api";
 import FooterSellerSpecs from "../FooterSellerSpecs";
 
 import { ModalGeneralMultiLang } from "../ModalGeneralMultiLang";
@@ -28,6 +27,7 @@ const FooterComponent = ({
   footerMktData,
   mktName,
   appUrl,
+  api,
 }) => {
   const [modalMultiLangActive, setModalMultiLangActive] = useState("inactive");
 
