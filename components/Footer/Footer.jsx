@@ -138,7 +138,7 @@ const FooterComponent = ({
       <S.box>
         <S.imagens>
           <S.MenuIconGray onClick={openMenu ? handleClose : handleShow} />
-          <Link href="/" passhref="true">
+          <a href="/" passhref="true">
             {router !== null && router.pathname === "/" ? (
               <>
                 <S.HomeIcon />
@@ -146,7 +146,7 @@ const FooterComponent = ({
             ) : (
               <S.HomeIconGray />
             )}
-          </Link>
+          </a>
 
           <Link href="/cart" passhref="true">
             {parseInt(cartLength) > 0 && (
