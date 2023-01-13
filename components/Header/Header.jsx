@@ -163,13 +163,13 @@ const HeaderComponent = ({
       <S.box>
         <S.imagens>
           <div className="logoSandwich">
-            <Link href="/">
+            <a href="/">
               <img
                 alt="Cielo"
                 src={Object.values(defaultLayout)[0][0]["logo-img"]}
                 id="logoDefault"
               />
-            </Link>
+            </a>
 
             {/* desktop Menu */}
           </div>
