@@ -255,7 +255,6 @@ const HeaderComponent = ({
                 </Link>{" "}
                 <Link href="/cart" passhref="true">
                   <span className="Carrinho">
-                    {" "}
                     {generalComponentsTranslation !== false &&
                       generalComponentsTranslation?.header.labels.label05}{" "}
                   </span>
