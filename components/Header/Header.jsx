@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import defaultLayout from "../../jover.json";
+
 import ModalGeneralLocation from "../ModalGeneralLocation";
 
 import * as S from "./style";
