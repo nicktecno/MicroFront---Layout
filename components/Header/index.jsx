@@ -5,10 +5,12 @@ import { useMenu } from "../../Context/Menu";
 import { useLang } from "../../Context/LangContext";
 import { useLocation } from "../../Context/Location";
 import api from "../../services/api";
+import { defaultLayout } from "../../jover.json";
 
 const Header = () => {
   const { openMenu, setOpenMenu, setMenuState, menuState } = useMenu();
   const { lang, generalComponentsTranslation, setLang } = useLang();
+  const logo = defaultLayout[0]["logo-img"];
   const {
     localizacao,
     localizado,
@@ -50,6 +52,7 @@ const Header = () => {
       setCartLength={setCartLength}
       setMenuState={setMenuState}
       menuState={menuState}
+      logo={logo}
     />
   );
 };

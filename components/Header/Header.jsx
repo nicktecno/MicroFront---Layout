@@ -37,6 +37,7 @@ const HeaderComponent = ({
   mktName,
   envGeo,
   envMsLocation,
+  logo,
 }) => {
   const router = useRouter();
 
@@ -164,11 +165,7 @@ const HeaderComponent = ({
         <S.imagens>
           <div className="logoSandwich">
             <Link href="/">
-              <img
-                alt="Cielo"
-                src={Object.values(defaultLayout)[0][0]["logo-img"]}
-                id="logoDefault"
-              />
+              <img alt="Cielo" src={logo} id="logoDefault" />
             </Link>
 
             {/* desktop Menu */}
