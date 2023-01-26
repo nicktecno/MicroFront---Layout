@@ -352,7 +352,7 @@ const HeaderComponent = ({
                 </>
               )}
             </span>
-            <S.ArrowRight />
+            <S.ArrowRightIcon />
           </S.cepMobile>
         </S.locationMobile>
       </S.box>

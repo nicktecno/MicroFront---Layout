@@ -3,14 +3,14 @@ import { generateMedia } from "styled-media-query";
 
 import { Home } from "@styled-icons/fluentui-system-regular/Home";
 import { UserCircle } from "@styled-icons/boxicons-regular/UserCircle";
-import { QuestionCircle } from "@styled-icons/bootstrap/QuestionCircle";
+import { QuestionCircle } from "@styled-icons/fluentui-system-filled/QuestionCircle";
 import { MenuOutline } from "@styled-icons/evaicons-outline/MenuOutline";
 import { Cart } from "@styled-icons/ionicons-sharp/Cart";
-import { Globe } from "@styled-icons/bootstrap/Globe";
+import { GlobeOutline } from "@styled-icons/evaicons-outline/GlobeOutline";
 import { Linkedin } from "@styled-icons/boxicons-logos/Linkedin";
 import { Edit } from "@styled-icons/boxicons-regular/Edit";
 import { AddToQueue } from "@styled-icons/boxicons-regular/AddToQueue";
-import { Trash } from "@styled-icons/bootstrap/Trash";
+import { Trash } from "@styled-icons/ionicons-solid/Trash";
 import { Language } from "@styled-icons/material/Language";
 
 const customMedia = generateMedia({
@@ -60,7 +60,7 @@ export const DeleteIcon = styled(Trash)`
   cursor: pointer;
 `;
 
-export const GlobeIcon = styled(Globe)`
+export const GlobeIcon = styled(GlobeOutline)`
   color: var(--title-color);
   height: 14px;
   width: 14px;

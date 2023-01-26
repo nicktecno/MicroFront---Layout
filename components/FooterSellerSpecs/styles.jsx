@@ -3,10 +3,10 @@ import { generateMedia } from "styled-media-query";
 
 import { Home } from "@styled-icons/fluentui-system-regular/Home";
 import { User } from "@styled-icons/boxicons-regular/User";
-import { QuestionCircle } from "@styled-icons/bootstrap/QuestionCircle";
-import { Menu4 } from "@styled-icons/remix-line/Menu4";
+import { QuestionCircle } from "@styled-icons/fluentui-system-filled/QuestionCircle";
+import { Menu4 } from "@styled-icons/remix-fill/Menu4";
 import { Cart } from "@styled-icons/boxicons-regular/Cart";
-import { Globe } from "@styled-icons/bootstrap/Globe";
+import { GlobeOutline } from "@styled-icons/evaicons-outline/GlobeOutline";
 import { Linkedin } from "@styled-icons/boxicons-logos/Linkedin";
 import { FacebookSquare } from "@styled-icons/boxicons-logos/FacebookSquare";
 import { Instagram } from "@styled-icons/boxicons-logos/Instagram";
@@ -18,7 +18,7 @@ const customMedia = generateMedia({
   mobile: "576px",
 });
 
-export const GlobeIcon = styled(Globe)`
+export const GlobeIcon = styled(GlobeOutline)`
   color: var(--title-color);
   height: 14px;
   width: 14px;

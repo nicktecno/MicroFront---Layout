@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 import { generateMedia } from "styled-media-query";
-import { CartCheckFill } from "@styled-icons/bootstrap/CartCheckFill";
-import { CartXFill } from "@styled-icons/bootstrap/CartXFill";
-import { Youtube } from "@styled-icons/bootstrap/Youtube";
+
+import { Youtube } from "@styled-icons/boxicons-logos/Youtube";
 import { Facebook } from "@styled-icons/entypo-social/Facebook";
 import { Instagram } from "@styled-icons/bootstrap/Instagram";
 import { Pinterest } from "@styled-icons/entypo-social/Pinterest";
@@ -40,20 +39,6 @@ export const PinterestIcon = styled(Pinterest)`
   color: #fff;
   height: 28px;
   width: 28px;
-`;
-
-export const CheckIcon = styled(CartCheckFill)`
-  color: #fff;
-  height: 54px;
-  width: 54px;
-  margin-bottom: 20px;
-`;
-
-export const RemoveIcon = styled(CartXFill)`
-  color: #fff;
-  height: 54px;
-  width: 54px;
-  margin-bottom: 20px;
 `;
 
 export const CorrectCheck = styled.div`

@@ -5,11 +5,11 @@ import { Marker } from "@styled-icons/foundation/Marker";
 import { Home } from "@styled-icons/fluentui-system-regular/Home";
 import { UserCircle } from "@styled-icons/boxicons-regular/UserCircle";
 
-import { QuestionCircle } from "@styled-icons/bootstrap/QuestionCircle";
+import { QuestionCircle } from "@styled-icons/fluentui-system-filled/QuestionCircle";
 import { Menu } from "@styled-icons/entypo/Menu";
 import { Cart } from "@styled-icons/ionicons-sharp/Cart";
 import { Search } from "@styled-icons/boxicons-regular/Search";
-import { ArrowRightShort } from "@styled-icons/bootstrap/ArrowRightShort";
+import { ArrowRight } from "@styled-icons/typicons/ArrowRight";
 import { Language } from "@styled-icons/material/Language";
 // Refatorar esta merda de nomenclatura seguindo padrão de %
 const customMedia = generateMedia({
@@ -23,7 +23,7 @@ const customMedia = generateMedia({
   pobre: "330px",
 });
 
-export const ArrowRight = styled(ArrowRightShort)`
+export const ArrowRightIcon = styled(ArrowRight)`
   color: var(--title-color);
   height: 30px;
   width: 30px;

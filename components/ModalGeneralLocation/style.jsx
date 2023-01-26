@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { generateMedia } from "styled-media-query";
 
 import { Search } from "@styled-icons/boxicons-regular/Search";
-import { PencilSquare } from "@styled-icons/bootstrap/PencilSquare";
+import { Pencil } from "@styled-icons/boxicons-solid/Pencil";
 
-import { HouseDoor } from "@styled-icons/bootstrap/HouseDoor";
-import { Briefcase } from "@styled-icons/bootstrap/Briefcase";
-import { PlusSquare } from "@styled-icons/bootstrap/PlusSquare";
-import { Trash } from "@styled-icons/bootstrap/Trash";
+import { House } from "@styled-icons/fa-solid/House";
+import { Briefcase } from "@styled-icons/boxicons-regular/Briefcase";
+import { PlusSquare } from "@styled-icons/evaicons-solid/PlusSquare";
+import { Trash } from "@styled-icons/ionicons-solid/Trash";
 
 const customMedia = generateMedia({
   desktop: "1200px",
@@ -544,7 +544,7 @@ export const BuscaIcon = styled(Search)`
   }
 `;
 
-export const pen = styled(PencilSquare)`
+export const pen = styled(Pencil)`
   color: #292929;
   height: 25px;
   width: 25px;
@@ -576,7 +576,7 @@ export const adicionar = styled(PlusSquare)`
   right: 20px;
 `;
 
-export const house = styled(HouseDoor)`
+export const house = styled(House)`
   color: #292929;
   height: 25px;
   width: 25px;
