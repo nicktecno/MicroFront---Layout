@@ -1,5 +1,5 @@
 import GlobalStyles from "../styles/globals";
-import { defaultLayout } from "../jover.json";
+import defaultLayout from "../jover";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";

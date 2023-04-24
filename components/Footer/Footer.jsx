@@ -148,12 +148,12 @@ const FooterComponent = ({
             )}
           </a>
 
-          <Link href="/cart" passhref="true">
+          <a href="/cart">
             {parseInt(cartLength) > 0 && (
               <S.cartValue>{parseInt(cartLength)}</S.cartValue>
             )}
             <S.CartIcon />
-          </Link>
+          </a>
           <a onClick={() => setModalMultiLangActive("active")}>
             <S.LanguageIcon />
           </a>

@@ -5,7 +5,7 @@ import { useMenu } from "../../Context/Menu";
 import { useLang } from "../../Context/LangContext";
 import { useLocation } from "../../Context/Location";
 import api from "../../services/api";
-import { defaultLayout } from "../../jover.json";
+import defaultLayout from "../../jover";
 
 const Header = () => {
   const { openMenu, setOpenMenu, setMenuState, menuState } = useMenu();
