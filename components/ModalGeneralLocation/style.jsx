@@ -317,6 +317,7 @@ export const button = styled.div`
   justify-content: center;
   align-items: center;
   align-content: center;
+  cursor: pointer;
   button {
     display: flex;
     text-align: center;
@@ -326,11 +327,11 @@ export const button = styled.div`
     height: 50px;
     font-weight: 500;
     background-color: var(--default-color);
-    color: var(--title-color);
+    color: var(--bt-positive-text-color);
     border: none;
     margin-top: 40px;
     margin-bottom: 20px;
-
+    cursor: pointer;
     opacity: 1;
     transition: 0.3s;
     z-index: 999;

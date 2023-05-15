@@ -24,7 +24,7 @@ const customMedia = generateMedia({
 });
 
 export const ArrowRightIcon = styled(ArrowRight)`
-  color: var(--title-color);
+  color: var(--header-secondary-font-color);
   height: 30px;
   width: 30px;
   min-width: 30px;
@@ -89,7 +89,7 @@ export const UserIconGray = styled(UserCircle)`
   width: 30px;
   min-width: 30px;
   margin-right: 0px;
-  margin-left: 17px;
+  margin-left: 10px;
 `;
 
 export const InfoIcon = styled(QuestionCircle)`
@@ -165,7 +165,7 @@ export const MarkerIconMobile = styled(Marker)`
   height: 21px;
   width: 21px;
   margin-right: 5px;
-  color: var(--header-font-color);
+  color: var(--header-secondary-font-color);
   margin-left: 15px;
   margin-top: 5px;
 `;
@@ -259,13 +259,13 @@ export const box = styled.div`
 export const imagens = styled.div`
   display: flex;
   width: 100%;
-  padding: 0 10px;
+
   align-items: center;
 
   .logoSandwich {
     display: flex;
     align-items: center !important;
-    margin: 0 10px;
+    margin: 0 10px 0 0;
     gap: 10px;
   }
 
@@ -574,7 +574,7 @@ export const LanguageContainer = styled.div`
       width: 30px;
   `}
 
-  ${customMedia.lessThan("netbook")`
+  ${customMedia.lessThan("tablet")`
     display: none;
   `}
 
@@ -596,7 +596,7 @@ export const cepMobile = styled.div`
 
   span {
     margin-top: 7px;
-    color: var(--title-color);
+    color: var(--header-secondary-font-color);
   }
 
   ${customMedia.lessThan("mobile")`

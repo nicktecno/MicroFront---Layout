@@ -157,205 +157,213 @@ const HeaderComponent = ({
       )}
 
       <S.box>
-        <S.imagens>
-          <div className="logoSandwich">
-            <Link href="/">
-              <img alt="Cielo" src={logo} id="logoDefault" />
-            </Link>
+        <div className="container">
+          <S.imagens>
+            <div className="logoSandwich">
+              <Link href="/">
+                <img alt="Cielo" src={logo} id="logoDefault" />
+              </Link>
 
-            {/* desktop Menu */}
-          </div>
-          <S.buscas>
-            {generalComponentsTranslation !== false && (
-              <S.BarraPesquisa>
-                <form onSubmit={handleBusca}>
-                  <input
-                    onFocus={() => {
-                      document.body.style.overflow = modalBuscaMobile
-                        ? "auto"
-                        : "hidden";
-                      setModalBuscaMobile(modalBuscaMobile ? false : true);
-                    }}
-                    type="text"
-                    value={buscaSite}
-                    onChange={(e) => setBuscaSite(e.target.value)}
-                    placeholder={
-                      generalComponentsTranslation !== false
-                        ? generalComponentsTranslation?.header.labels
-                            .placeholder01
-                        : ""
-                    }
-                  />
-                </form>
-                <S.BuscaIcon onClick={handleBusca} />
-              </S.BarraPesquisa>
-            )}
-            <S.ContainerFunctions>
-              <S.LanguageContainer
-                onClick={() => {
-                  document.body.style.overflow = "hidden";
-                  setModalMultiLangActive("active");
-                }}
-              >
-                <S.LanguageIcon />
-                <span>
-                  {generalComponentsTranslation !== false &&
-                    generalComponentsTranslation?.header.labels.label01}
-                </span>
-              </S.LanguageContainer>
-              <S.cep
-                className={localizado ? "ativo" : ""}
-                onClick={() => {
-                  document.body.style.overflow = "hidden";
-                  setModal(modal ? false : true);
-
-                  setOpenMenu(false);
-                }}
-              >
-                <S.MarkerIcon />
-                <span className="localizaçao">
-                  {localizado ? (
-                    <>
-                      {generalComponentsTranslation !== false &&
-                        generalComponentsTranslation?.header.labels.label02}
-                      <br />
-                      {localizacao.postalcode !== undefined
-                        ? localizacao.postalcode.replace(/(\d{5})(\d)/, "$1-$2")
-                        : localizacao.postcode !== undefined
-                        ? localizacao.postcode.replace(/(\d{5})(\d)/, "$1-$2")
-                        : localizacao.zipcode.replace(/(\d{5})(\d)/, "$1-$2")}
-                    </>
-                  ) : (
-                    <>
-                      {generalComponentsTranslation !== false &&
-                        generalComponentsTranslation?.header.labels.label03}
-                      <br />
-                      {generalComponentsTranslation !== false &&
-                        generalComponentsTranslation?.header.labels.label04}
-                    </>
-                  )}
-                </span>
-              </S.cep>
-              <div className="flex-cart hidden-mob">
-                {parseInt(cartLength) > 0 && (
-                  <Link href="/cart" passhref="true">
-                    <S.cartValue>{parseInt(cartLength)}</S.cartValue>
-                  </Link>
-                )}
-                <Link href="/cart" passhref="true">
-                  <S.CartIconGray />
-                </Link>{" "}
-                <Link href="/cart" passhref="true">
-                  <span className="Carrinho">
+              {/* desktop Menu */}
+            </div>
+            <S.buscas>
+              {generalComponentsTranslation !== false && (
+                <S.BarraPesquisa>
+                  <form onSubmit={handleBusca}>
+                    <input
+                      onFocus={() => {
+                        document.body.style.overflow = modalBuscaMobile
+                          ? "auto"
+                          : "hidden";
+                        setModalBuscaMobile(modalBuscaMobile ? false : true);
+                      }}
+                      type="text"
+                      value={buscaSite}
+                      onChange={(e) => setBuscaSite(e.target.value)}
+                      placeholder={
+                        generalComponentsTranslation !== false
+                          ? generalComponentsTranslation?.header.labels
+                              .placeholder01
+                          : ""
+                      }
+                    />
+                  </form>
+                  <S.BuscaIcon onClick={handleBusca} />
+                </S.BarraPesquisa>
+              )}
+              <S.ContainerFunctions>
+                <S.LanguageContainer
+                  onClick={() => {
+                    document.body.style.overflow = "hidden";
+                    setModalMultiLangActive("active");
+                  }}
+                >
+                  <S.LanguageIcon />
+                  <span>
                     {generalComponentsTranslation !== false &&
-                      generalComponentsTranslation?.header.labels.label05}{" "}
+                      generalComponentsTranslation?.header.labels.label01}
                   </span>
-                </Link>
-              </div>
+                </S.LanguageContainer>
+                <S.cep
+                  className={localizado ? "ativo" : ""}
+                  onClick={() => {
+                    document.body.style.overflow = "hidden";
+                    setModal(modal ? false : true);
 
-              {logged !== false ? (
-                <div className="flex-top hidden-mob">
-                  {parseInt(unreadNotifications) > 0 && (
-                    <Link href="/profile">
-                      <S.cartValue>{parseInt(unreadNotifications)}</S.cartValue>
+                    setOpenMenu(false);
+                  }}
+                >
+                  <S.MarkerIcon />
+                  <span className="localizaçao">
+                    {localizado ? (
+                      <>
+                        {generalComponentsTranslation !== false &&
+                          generalComponentsTranslation?.header.labels.label02}
+                        <br />
+                        {localizacao.postalcode !== undefined
+                          ? localizacao.postalcode.replace(
+                              /(\d{5})(\d)/,
+                              "$1-$2"
+                            )
+                          : localizacao.postcode !== undefined
+                          ? localizacao.postcode.replace(/(\d{5})(\d)/, "$1-$2")
+                          : localizacao.zipcode.replace(/(\d{5})(\d)/, "$1-$2")}
+                      </>
+                    ) : (
+                      <>
+                        {generalComponentsTranslation !== false &&
+                          generalComponentsTranslation?.header.labels.label03}
+                        <br />
+                        {generalComponentsTranslation !== false &&
+                          generalComponentsTranslation?.header.labels.label04}
+                      </>
+                    )}
+                  </span>
+                </S.cep>
+                <div className="flex-cart hidden-mob">
+                  {parseInt(cartLength) > 0 && (
+                    <Link href="/cart" passhref="true">
+                      <S.cartValue>{parseInt(cartLength)}</S.cartValue>
                     </Link>
                   )}
-                  <Link href="/profile" passhref="true">
-                    <S.UserIcon />
-                  </Link>
-                  <Link href="/profile" passhref="true">
-                    <span className="nomeHeader">
-                      Olá!
-                      <br />
-                      {localStorage.getItem(`${mktName}_username`)}
-                    </span>
-                  </Link>
-                </div>
-              ) : (
-                <div className="flex-top hidden-mob">
-                  <Link href="/login" passhref="true">
-                    <S.UserIconGray />
-                  </Link>
-                  <Link href="/login" passhref="true">
-                    <span className="FacaLogin">
+                  <Link href="/cart" passhref="true">
+                    <S.CartIconGray />
+                  </Link>{" "}
+                  <Link href="/cart" passhref="true">
+                    <span className="Carrinho">
                       {generalComponentsTranslation !== false &&
-                        generalComponentsTranslation?.header.labels.label06}
+                        generalComponentsTranslation?.header.labels
+                          .label05}{" "}
                     </span>
                   </Link>
                 </div>
-              )}
-            </S.ContainerFunctions>
-          </S.buscas>
-        </S.imagens>
-        <S.SecondaryHeader>
-          <div className="container">
-            <S.ContainerSandwich
-              onClick={() => {
-                setMenuState(false);
-                setOpenMenu((prev) => !prev);
-              }}
-              onMouseEnter={() => {
-                setOpenMenu(false);
-                timerIdSandwich.current = window.setTimeout(() => {
-                  setOpenMenu(true);
-                  setMenuState(false);
-                }, "500");
-              }}
-              onMouseLeave={() => {
-                document.body.style.overflow = "auto";
-                window.clearTimeout(timerIdSandwich.current);
-                timerIdSandwich.current = window.setTimeout(() => {
-                  setOpenMenu(false);
-                }, "150");
-              }}
-            >
-              <S.ContainerMenuIcon>
-                <S.MenuIconGray className="imgresponsiva menu" alt="Menu" />
-              </S.ContainerMenuIcon>
-              <span className="menuLabel">
-                <span className="buy"> Comprar por</span> Departamentos
-              </span>
-            </S.ContainerSandwich>
-            <HeaderMenu menu={menu} setOpenMenu={setOpenMenu} />
-          </div>
-        </S.SecondaryHeader>
-        <S.locationMobile
-          onClick={() => {
-            document.body.style.overflow = "hidden";
-            setModal(modal ? false : true);
 
-            setOpenMenu(false);
-          }}
-        >
-          <S.cepMobile className={localizado ? "ativo" : ""}>
-            <S.MarkerIconMobile />
-            <span className="localizaçao">
-              {localizado ? (
-                <>
-                  {generalComponentsTranslation !== false &&
-                    generalComponentsTranslation?.header.labels.label09}{" "}
-                  {localizacao?.city && (
-                    <>
-                      {localizacao.city} {" - "}{" "}
-                    </>
-                  )}
-                  {localizacao.postalcode !== undefined
-                    ? localizacao.postalcode.replace(/(\d{5})(\d)/, "$1-$2")
-                    : localizacao.postcode !== undefined
-                    ? localizacao.postcode.replace(/(\d{5})(\d)/, "$1-$2")
-                    : localizacao.zipcode.replace(/(\d{5})(\d)/, "$1-$2")}
-                </>
-              ) : (
-                <>
-                  {" "}
-                  {generalComponentsTranslation !== false &&
-                    generalComponentsTranslation?.header.labels.label10}
-                </>
-              )}
-            </span>
-            <S.ArrowRightIcon />
-          </S.cepMobile>
-        </S.locationMobile>
+                {logged !== false ? (
+                  <div className="flex-top hidden-mob">
+                    {parseInt(unreadNotifications) > 0 && (
+                      <Link href="/profile">
+                        <S.cartValue>
+                          {parseInt(unreadNotifications)}
+                        </S.cartValue>
+                      </Link>
+                    )}
+                    <Link href="/profile" passhref="true">
+                      <S.UserIcon />
+                    </Link>
+                    <Link href="/profile" passhref="true">
+                      <span className="nomeHeader">
+                        Olá!
+                        <br />
+                        {localStorage.getItem(`${mktName}_username`)}
+                      </span>
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="flex-top hidden-mob">
+                    <Link href="/login" passhref="true">
+                      <S.UserIconGray />
+                    </Link>
+                    <Link href="/login" passhref="true">
+                      <span className="FacaLogin">
+                        {generalComponentsTranslation !== false &&
+                          generalComponentsTranslation?.header.labels.label06}
+                      </span>
+                    </Link>
+                  </div>
+                )}
+              </S.ContainerFunctions>
+            </S.buscas>
+          </S.imagens>
+          <S.SecondaryHeader>
+            <div className="container">
+              <S.ContainerSandwich
+                onClick={() => {
+                  setMenuState(false);
+                  setOpenMenu((prev) => !prev);
+                }}
+                onMouseEnter={() => {
+                  setOpenMenu(false);
+                  timerIdSandwich.current = window.setTimeout(() => {
+                    setOpenMenu(true);
+                    setMenuState(false);
+                  }, "500");
+                }}
+                onMouseLeave={() => {
+                  document.body.style.overflow = "auto";
+                  window.clearTimeout(timerIdSandwich.current);
+                  timerIdSandwich.current = window.setTimeout(() => {
+                    setOpenMenu(false);
+                  }, "150");
+                }}
+              >
+                <S.ContainerMenuIcon>
+                  <S.MenuIconGray className="imgresponsiva menu" alt="Menu" />
+                </S.ContainerMenuIcon>
+                <span className="menuLabel">
+                  <span className="buy"> Comprar por</span> Departamentos
+                </span>
+              </S.ContainerSandwich>
+              <HeaderMenu menu={menu} setOpenMenu={setOpenMenu} />
+            </div>
+          </S.SecondaryHeader>
+          <S.locationMobile
+            onClick={() => {
+              document.body.style.overflow = "hidden";
+              setModal(modal ? false : true);
+
+              setOpenMenu(false);
+            }}
+          >
+            <S.cepMobile className={localizado ? "ativo" : ""}>
+              <S.MarkerIconMobile />
+              <span className="localizaçao">
+                {localizado ? (
+                  <>
+                    {generalComponentsTranslation !== false &&
+                      generalComponentsTranslation?.header.labels.label09}{" "}
+                    {localizacao?.city && (
+                      <>
+                        {localizacao.city} {" - "}{" "}
+                      </>
+                    )}
+                    {localizacao.postalcode !== undefined
+                      ? localizacao.postalcode.replace(/(\d{5})(\d)/, "$1-$2")
+                      : localizacao.postcode !== undefined
+                      ? localizacao.postcode.replace(/(\d{5})(\d)/, "$1-$2")
+                      : localizacao.zipcode.replace(/(\d{5})(\d)/, "$1-$2")}
+                  </>
+                ) : (
+                  <>
+                    {" "}
+                    {generalComponentsTranslation !== false &&
+                      generalComponentsTranslation?.header.labels.label10}
+                  </>
+                )}
+              </span>
+              <S.ArrowRightIcon />
+            </S.cepMobile>
+          </S.locationMobile>
+        </div>
       </S.box>
 
       <S.transparente
