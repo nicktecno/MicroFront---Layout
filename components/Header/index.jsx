@@ -7,6 +7,7 @@ import { useLocation } from "../../Context/Location";
 import { useNotifications } from "../../Context/Notification";
 import api from "../../services/api";
 import defaultLayout from "../../jover";
+import { useRef } from "react";
 
 const Header = () => {
   const { openMenu, setOpenMenu, setMenuState, menuState } = useMenu();
