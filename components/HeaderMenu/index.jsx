@@ -7,12 +7,10 @@ import * as S from "./style";
 import Link from "next/link";
 import { useMenu } from "../../Context/Menu";
 
-const HeaderMenu = ({ menu, setOpenMenu }) => {
+const HeaderMenu = ({ menu, setOpenMenu, menuState, setMenuState }) => {
   const { setModal } = useLocation();
   const [selectedItem, setSelectedItem] = useState([]);
   const [indexMenu, setIndexMenu] = useState(false);
-
-  const { menuState, setMenuState } = useMenu();
 
   const refButtons = useRef([]);
   const timerId = useRef(null);

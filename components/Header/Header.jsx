@@ -27,6 +27,7 @@ const HeaderComponent = ({
   setLocalizado,
   modal,
   setModal,
+  menuState,
   setMenuState,
   removeLocation,
   AtualizarModalPagina,
@@ -323,7 +324,12 @@ const HeaderComponent = ({
                   <span className="buy"> Comprar por</span> Departamentos
                 </span>
               </S.ContainerSandwich>
-              <HeaderMenu menu={menu} setOpenMenu={setOpenMenu} />
+              <HeaderMenu
+                menuState={menuState}
+                setMenuState={setMenuState}
+                menu={menu}
+                setOpenMenu={setOpenMenu}
+              />
             </div>
           </S.SecondaryHeader>
           <S.locationMobile
