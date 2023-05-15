@@ -29,6 +29,9 @@ const Header = () => {
   const mktName = process.env.NEXT_PUBLIC_REACT_APP_NAME;
   const envGeo = process.env.NEXT_PUBLIC_REACT_APP_GOOGLE_MAPS_API_KEY;
   const envMsLocation = process.env.NEXT_PUBLIC_REACT_APP_MS_LOCATION;
+  const timerIdSandwich = useRef(null);
+  const refButtons = useRef([]);
+  const timerId = useRef(null);
 
   return (
     <HeaderComponent
@@ -57,6 +60,9 @@ const Header = () => {
       setMenuState={setMenuState}
       menuState={menuState}
       logo={logo}
+      timerIdSandwich={timerIdSandwich}
+      refButtons={refButtons}
+      timerId={timerId}
     />
   );
 };

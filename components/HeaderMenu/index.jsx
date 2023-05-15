@@ -7,13 +7,17 @@ import * as S from "./style";
 import Link from "next/link";
 import { useMenu } from "../../Context/Menu";
 
-const HeaderMenu = ({ menu, setOpenMenu, menuState, setMenuState }) => {
+const HeaderMenu = ({
+  menu,
+  setOpenMenu,
+  menuState,
+  setMenuState,
+  refButtons,
+  timerId,
+}) => {
   const { setModal } = useLocation();
   const [selectedItem, setSelectedItem] = useState([]);
   const [indexMenu, setIndexMenu] = useState(false);
-
-  const refButtons = useRef([]);
-  const timerId = useRef(null);
 
   const handleHover = (itemId) => {
     setModal(false);

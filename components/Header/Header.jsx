@@ -40,6 +40,9 @@ const HeaderComponent = ({
   logo,
   getNotificationStatus,
   unreadNotifications,
+  timerIdSandwich,
+  refButtons,
+  timerId,
 }) => {
   const router = useRouter();
 
@@ -53,8 +56,6 @@ const HeaderComponent = ({
   const [menu, setMenu] = useState([]);
 
   const [windowWidth, setWindowWidth] = useState("");
-
-  const timerIdSandwich = useRef(null);
 
   const handleBusca = (e) => {
     e.preventDefault();
@@ -329,6 +330,8 @@ const HeaderComponent = ({
                 setMenuState={setMenuState}
                 menu={menu}
                 setOpenMenu={setOpenMenu}
+                refButtons={refButtons}
+                timerId={timerId}
               />
             </div>
           </S.SecondaryHeader>
