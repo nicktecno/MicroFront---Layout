@@ -244,7 +244,7 @@ export const cazco = styled.div`
   padding: 10px 0px;
   color: rgb(255, 255, 255);
   font-size: 11px;
-  display: ${(props) => (props.routeWithSpace ? "none" : "flex")};
+  display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -307,7 +307,17 @@ export const transparente = styled.div`
   }
   `}
 `;
+
+export const ContainerFooter = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  ${customMedia.lessThan("tablet")`
+  margin-bottom: ${(props) => (props.routeWithSpace ? "60px" : "0px")};
+        `}
+`;
+
 export const ContainerFooterSpecs = styled.div`
-  display: ${(props) => (props.routeWithSpace ? "none" : "flex")};
+  display: flex;
   width: 100%;
 `;

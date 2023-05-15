@@ -29,6 +29,10 @@ const GlobalStyles = createGlobalStyle`
     --menu-sandwich-body: ${(props) => props.colors[0]["menu-sandwich-body"]};
     --title-modal-color: ${(props) => props.colors[0]["title-modal-color"]};
     --header-color: ${(props) => props.colors[0]["header-color"]};
+    --header-secondary-color: ${(props) =>
+      props.colors[0]["header-secondary-color"]};
+    --header-secondary-font-color:${(props) =>
+      props.colors[0]["header-secondary-font-color"]};
     --header-font-color:${(props) => props.colors[0]["header-font-color"]};
     --card-background:${(props) => props.colors[0]["card-background"]};
     --card-color-price:${(props) => props.colors[0]["card-color-price"]};

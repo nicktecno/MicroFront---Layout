@@ -110,12 +110,12 @@ export const MenuIcon = styled(Menu)`
   height: 40px;
   width: 40px;
   margin-right: 0px;
-  color: var(--header-font-color);
+  color: var(--header-secondary-font-color);
 `;
 
 export const MenuIconGray = styled(Menu)`
+  color: var(--header-secondary-font-color);
   margin-left: 10%;
-  color: #fff;
   height: 30px;
   width: 30px;
   margin-right: 10px;
@@ -189,6 +189,11 @@ export const cartValue = styled.div`
     `}
 `;
 
+export const ContainerMenuIcon = styled.div`
+  display: flex;
+  width: 40px;
+`;
+
 export const atentionMsg = styled.div`
   text-align: center;
   font-size: 12px;
@@ -221,6 +226,7 @@ export const box = styled.div`
   position: fixed;
   z-index: 999;
   display: flex;
+  justify-content: center;
 
   align-items: center;
   top: 0;
@@ -230,8 +236,20 @@ export const box = styled.div`
   box-shadow: 0px 5px 10px #0000001f;
 
   .container {
-    max-width: 100%;
-    margin: 0;
+    display: flex;
+    align-items: center;
+
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 12%;
+    padding: 0px;
+    ${customMedia.lessThan("1366px")`
+      margin:0 5%;
+  `}
+
+    ${customMedia.lessThan("tablet")`
+      margin:0 10px;
+  `}
   }
   ${customMedia.lessThan("notebook")`
       height:60px;
@@ -330,7 +348,7 @@ export const buscas = styled.div`
   .nomeHeader {
     margin-left: 5px;
     font-weight: 400;
-    font-size: 11px;
+    font-size: 10px;
     line-height: 14px;
     max-width: 130px;
     overflow: hidden;
@@ -383,10 +401,6 @@ export const buscas = styled.div`
 
 export const ContainerFunctions = styled.div`
   display: flex;
-
-  ${customMedia.lessThan("netbook")`
-    display: none;
-    `}
 `;
 
 export const BarraPesquisa = styled.div`
@@ -524,7 +538,7 @@ export const cep = styled.div`
       width: 30px;
   `}
 
-  ${customMedia.lessThan("netbook")`
+  ${customMedia.lessThan("tablet")`
     display: none;
   `}
 
@@ -843,27 +857,65 @@ export const SecondaryHeader = styled.div`
   width: 100%;
   height: 30px;
   display: flex;
-  justify-content: start;
+  justify-content: space-evenly;
   align-items: center;
   top: 60px;
-  color: #fff;
-  background-color: var(--default-color-hover);
+  left: 0px;
+  background-color: var(--header-secondary-color);
   position: fixed;
-  border-bottom: 1px solid var(--default-color-hover);
+  border-bottom: 1px solid var(--header-color);
+
   z-index: 10;
   font-weight: 550;
-  ${customMedia.lessThan("netbook")` 
-    display: none;
+  ${customMedia.lessThan("tablet")` 
+   
   `}
+
+  .container {
+    margin: 0 12%;
+
+    ${customMedia.lessThan("1366px")`
+      margin:0 5%;
+  `}
+  }
   .menuLabel {
     text-transform: uppercase;
-    height: auto;
-    cursor: pointer;
-    ${customMedia.lessThan("notebook")`
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    color: var(--header-secondary-font-color);
+    ${customMedia.lessThan("1280px")`
+    margin-right: 0px;
     span{
       display:none;
     }
+    
     `}
+    ${customMedia.lessThan("1100px")`
+    
+  
+      display:none;
+    
+    
+    `}
+    cursor: pointer;
+  }
+`;
+
+export const ContainerSandwich = styled.div`
+  display: flex;
+  width: max-content;
+  justify-content: flex-start;
+  margin-right: 20px;
+
+  .buy {
+    display: flex;
+    width: max-content;
+    margin-right: 3px;
+  }
+  span {
+    display: flex;
   }
 `;
 
@@ -876,7 +928,7 @@ export const locationMobile = styled.div`
   position: fixed;
   border-bottom: 1px solid var(--default-color-hover);
   z-index: 10;
-  ${customMedia.lessThan("netbook")` 
+  ${customMedia.lessThan("tablet")` 
     display: flex;
   `}
 `;

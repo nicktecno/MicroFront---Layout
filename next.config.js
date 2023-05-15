@@ -37,7 +37,11 @@ const nextConfig = {
     config.plugins.push(
       new NextFederationPlugin({
         name: "layout",
-        remotes: {},
+        remotes: {
+          searchPage: `searchPage@https://micro-front-search.vercel.app//_next/static/${
+            isServer ? "ssr" : "chunks"
+          }/remoteEntry.js`,
+        },
         filename: "static/chunks/remoteEntry.js",
         exposes: {
           "./header": "./components/Header/Header.jsx",

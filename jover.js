@@ -34,6 +34,8 @@ const defaultLayout = [
     "footer-text-color-hover": "#231f20",
     "header-color": "#ffffff",
     "header-font-color": "#231f20",
+    "header-secondary-color": "#00aeef",
+    "header-secondary-font-color": "#ffffff",
     "logo-img": "/images/cieloLogo.png",
     "negative-button-border": "transparent",
     "profile-card-color": "#ffffff",

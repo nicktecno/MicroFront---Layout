@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import ModalGeneralLocation from "../ModalGeneralLocation";
 
@@ -27,7 +27,6 @@ const HeaderComponent = ({
   setLocalizado,
   modal,
   setModal,
-  menuState,
   setMenuState,
   removeLocation,
   AtualizarModalPagina,
@@ -38,6 +37,8 @@ const HeaderComponent = ({
   envGeo,
   envMsLocation,
   logo,
+  getNotificationStatus,
+  unreadNotifications,
 }) => {
   const router = useRouter();
 
@@ -51,6 +52,8 @@ const HeaderComponent = ({
   const [menu, setMenu] = useState([]);
 
   const [windowWidth, setWindowWidth] = useState("");
+
+  const timerIdSandwich = useRef(null);
 
   const handleBusca = (e) => {
     e.preventDefault();
@@ -77,7 +80,7 @@ const HeaderComponent = ({
       const { data: response } = await api.get("/descendant-categories");
       setMenu(
         response.data.filter(({ name }) => {
-          return name;
+          return name !== "Root";
         })
       );
     } catch (err) {
@@ -87,6 +90,7 @@ const HeaderComponent = ({
 
   useEffect(() => {
     document.body.style.overflow = modal ? "hidden" : "auto";
+    getNotificationStatus();
   }, [modal]);
 
   useEffect(() => {
@@ -101,16 +105,6 @@ const HeaderComponent = ({
     getMenu();
     setWindowWidth(window.innerWidth);
   }, []);
-
-  function handleModal() {
-    if (openMenu) {
-      document.body.style.overflow = "auto";
-      setOpenMenu(false);
-    } else {
-      document.body.style.overflow = "hidden";
-      setOpenMenu(true);
-    }
-  }
 
   return (
     <>
@@ -153,13 +147,14 @@ const HeaderComponent = ({
           </S.local>
         </S.modal1>
       )}
-
-      <ModalGeneralSandwichMenu
-        openMenu={openMenu}
-        setOpenMenu={setOpenMenu}
-        menu={menu}
-        generalComponentsTranslation={generalComponentsTranslation}
-      />
+      {openMenu !== false && (
+        <ModalGeneralSandwichMenu
+          openMenu={openMenu}
+          setOpenMenu={setOpenMenu}
+          menu={menu}
+          timerIdSandwich={timerIdSandwich}
+        />
+      )}
 
       <S.box>
         <S.imagens>
@@ -255,10 +250,16 @@ const HeaderComponent = ({
                     {generalComponentsTranslation !== false &&
                       generalComponentsTranslation?.header.labels.label05}{" "}
                   </span>
-                </Link>{" "}
+                </Link>
               </div>
+
               {logged !== false ? (
                 <div className="flex-top hidden-mob">
+                  {parseInt(unreadNotifications) > 0 && (
+                    <Link href="/profile">
+                      <S.cartValue>{parseInt(unreadNotifications)}</S.cartValue>
+                    </Link>
+                  )}
                   <Link href="/profile" passhref="true">
                     <S.UserIcon />
                   </Link>
@@ -287,36 +288,36 @@ const HeaderComponent = ({
           </S.buscas>
         </S.imagens>
         <S.SecondaryHeader>
-          <S.MenuIconGray
-            onClick={() => {
-              setMenuState(false);
-              handleModal();
-            }}
-            className="imgresponsiva menu"
-            alt="Menu"
-          />
-          <span
-            className="menuLabel"
-            onClick={() => {
-              setMenuState(false);
-
-              setOpenMenu(openMenu ? false : true);
-            }}
-          >
-            <span>
-              {" "}
-              {generalComponentsTranslation !== false &&
-                generalComponentsTranslation?.header.labels.label07}
-            </span>{" "}
-            {generalComponentsTranslation !== false &&
-              generalComponentsTranslation?.header.labels.label08}
-          </span>
-          <HeaderMenu
-            menu={menu}
-            menuState={menuState}
-            setMenuState={setMenuState}
-            setModal={setModal}
-          />
+          <div className="container">
+            <S.ContainerSandwich
+              onClick={() => {
+                setMenuState(false);
+                setOpenMenu((prev) => !prev);
+              }}
+              onMouseEnter={() => {
+                setOpenMenu(false);
+                timerIdSandwich.current = window.setTimeout(() => {
+                  setOpenMenu(true);
+                  setMenuState(false);
+                }, "500");
+              }}
+              onMouseLeave={() => {
+                document.body.style.overflow = "auto";
+                window.clearTimeout(timerIdSandwich.current);
+                timerIdSandwich.current = window.setTimeout(() => {
+                  setOpenMenu(false);
+                }, "150");
+              }}
+            >
+              <S.ContainerMenuIcon>
+                <S.MenuIconGray className="imgresponsiva menu" alt="Menu" />
+              </S.ContainerMenuIcon>
+              <span className="menuLabel">
+                <span className="buy"> Comprar por</span> Departamentos
+              </span>
+            </S.ContainerSandwich>
+            <HeaderMenu menu={menu} setOpenMenu={setOpenMenu} />
+          </div>
         </S.SecondaryHeader>
         <S.locationMobile
           onClick={() => {
@@ -376,7 +377,7 @@ const HeaderComponent = ({
               document.body.style.overflow = "auto";
               setModalBusca(modalBusca ? false : true);
             }}
-          ></S.transparente>
+          />
         </S.busca>
       </S.modal2>
 

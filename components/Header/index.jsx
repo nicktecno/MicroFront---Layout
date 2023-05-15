@@ -4,6 +4,7 @@ import { useCart } from "../../Context/CartLengthContext";
 import { useMenu } from "../../Context/Menu";
 import { useLang } from "../../Context/LangContext";
 import { useLocation } from "../../Context/Location";
+import { useNotifications } from "../../Context/Notification";
 import api from "../../services/api";
 import defaultLayout from "../../jover";
 
@@ -23,6 +24,7 @@ const Header = () => {
     setAtualizarModalPagina,
   } = useLocation();
   const { cartLength, setCartLength } = useCart();
+  const { getNotificationStatus, unreadNotifications } = useNotifications();
 
   const mktName = process.env.NEXT_PUBLIC_REACT_APP_NAME;
   const envGeo = process.env.NEXT_PUBLIC_REACT_APP_GOOGLE_MAPS_API_KEY;
@@ -30,6 +32,8 @@ const Header = () => {
 
   return (
     <HeaderComponent
+      getNotificationStatus={getNotificationStatus}
+      unreadNotifications={unreadNotifications}
       envGeo={envGeo}
       envMsLocation={envMsLocation}
       mktName={mktName}

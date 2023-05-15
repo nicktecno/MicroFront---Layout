@@ -168,67 +168,69 @@ const FooterComponent = ({
           )}
         </S.imagens>
       </S.box>
-      <S.ContainerFooterSpecs routeWithSpace={routeWithSpace}>
-        <FooterSellerSpecs
-          appUrl={appUrl}
-          footerMktData={footerMktData}
-          generalComponentsTranslation={generalComponentsTranslation}
-        />
-      </S.ContainerFooterSpecs>
-      <S.cazco routeWithSpace={routeWithSpace}>
-        {process.env.NEXT_PUBLIC_REACT_APP_MMP_STATE === "true" && (
-          <>
-            <select
-              defaultValue={themeName}
-              onChange={(e) => {
-                chooseMktOption(e.target.value);
-                setThemeName(e.target.value);
-              }}
-            >
-              {selectedSchema?.map((name) => {
-                return (
-                  <option value={name} key={name}>
-                    {name}
-                  </option>
-                );
-              })}
-            </select>
-
-            <S.AddIcon
-              onClick={() => setColorPicker({ state: true, type: "add" })}
-            />
-            <S.EditIcon
-              onClick={() => setColorPicker({ state: true, type: "edit" })}
-            />
-            <S.DeleteIcon
-              onClick={() => setColorPicker({ state: true, type: "delete" })}
-            />
-            <S.espaco />
-          </>
-        )}
-        {generalComponentsTranslation !== false &&
-          generalComponentsTranslation?.footer.labels.label01}
-        <a
-          rel="noreferrer"
-          href="https://www.linkedin.com/company/cazco/about/"
-          target="_blank"
-        >
-          <img
-            alt="Cazco"
-            src="/images/cazco.png"
-            className="cazco"
-            passhref="true"
+      <S.ContainerFooter routeWithSpace={routeWithSpace}>
+        <S.ContainerFooterSpecs>
+          <FooterSellerSpecs
+            appUrl={appUrl}
+            footerMktData={footerMktData}
+            generalComponentsTranslation={generalComponentsTranslation}
           />
-        </a>
-        <S.espaco />
-        <a
-          rel="noreferrer"
-          href="https://www.linkedin.com/company/cazco/about/"
-          target="_blank"
-        >
-          <S.LinkedInIcon />
-        </a>
-      </S.cazco>
+        </S.ContainerFooterSpecs>
+        <S.cazco>
+          {process.env.NEXT_PUBLIC_REACT_APP_MMP_STATE === "true" && (
+            <>
+              <select
+                defaultValue={themeName}
+                onChange={(e) => {
+                  chooseMktOption(e.target.value);
+                  setThemeName(e.target.value);
+                }}
+              >
+                {selectedSchema?.map((name) => {
+                  return (
+                    <option value={name} key={name}>
+                      {name}
+                    </option>
+                  );
+                })}
+              </select>
+
+              <S.AddIcon
+                onClick={() => setColorPicker({ state: true, type: "add" })}
+              />
+              <S.EditIcon
+                onClick={() => setColorPicker({ state: true, type: "edit" })}
+              />
+              <S.DeleteIcon
+                onClick={() => setColorPicker({ state: true, type: "delete" })}
+              />
+              <S.espaco />
+            </>
+          )}
+          {generalComponentsTranslation !== false &&
+            generalComponentsTranslation?.footer.labels.label01}
+          <a
+            rel="noreferrer"
+            href="https://www.linkedin.com/company/cazco/about/"
+            target="_blank"
+          >
+            <img
+              alt="Cazco"
+              src="/images/cazco.png"
+              className="cazco"
+              passhref="true"
+            />
+          </a>
+          <S.espaco />
+          <a
+            rel="noreferrer"
+            href="https://www.linkedin.com/company/cazco/about/"
+            target="_blank"
+          >
+            <S.LinkedInIcon />
+          </a>
+        </S.cazco>
+      </S.ContainerFooter>
       <S.modal1>
         <S.local className={colorPicker.state ? "ativo" : "inativo"}>
           <S.transparente
