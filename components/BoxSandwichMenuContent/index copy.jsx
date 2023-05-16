@@ -6,11 +6,7 @@ import { ArrowIosBackOutline } from "@styled-icons/evaicons-outline/ArrowIosBack
 import * as S from "./style";
 import { useRouter } from "next/router";
 
-const BoxSandwichMenuContent = ({
-  generalComponentsTranslation,
-  menu,
-  setOpenMenu,
-}) => {
+const BoxSandwichMenuContent = ({ menu, setOpenMenu }) => {
   const [subMenu, setSubMenu] = useState(false);
 
   const history = useRouter();
@@ -55,15 +51,10 @@ const BoxSandwichMenuContent = ({
                       {subMenu !== false ? (
                         <div className="backMenu">
                           <ArrowIosBackOutline />
-                          {generalComponentsTranslation !== false &&
-                            generalComponentsTranslation !== undefined &&
-                            generalComponentsTranslation?.header.labels
-                              .labelModal07}
+                          Menu Principal
                         </div>
                       ) : (
-                        generalComponentsTranslation !== false &&
-                        generalComponentsTranslation !== undefined &&
-                        generalComponentsTranslation?.header.labels.labelModal08
+                        Início
                       )}
                     </a>
                   ) : (
@@ -82,72 +73,66 @@ const BoxSandwichMenuContent = ({
                     </a>
                   )}
                 </li>
-                {console.log(item)}
-                {subMenu === item.id &&
-                  generalComponentsTranslation !== false &&
-                  generalComponentsTranslation !== undefined && (
-                    <ul className="children">
-                      <li>
+                {subMenu === item.id && (
+                  <ul className="children">
+                    <li>
+                      <a
+                        className="children"
+                        onClick={() => {
+                          setOpenMenu(false);
+
+                          redirect(
+                            `/category/${item.name.replace(/\s/g, "+")}`
+                          );
+                        }}
+                      >
+                        <div className="containerTextImg">
+                          <div className="containerText strong">
+                            Ver {item.name}
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    {item.children.map((children, i) => (
+                      <li key={i}>
                         <a
                           className="children"
                           onClick={() => {
                             setOpenMenu(false);
 
                             redirect(
-                              `/category/${item.name.replace(/\s/g, "+")}`
+                              `/category/${item.name.replace(
+                                /\s/g,
+                                "+"
+                              )}/${item.name.replace(
+                                /\s/g,
+                                "+"
+                              )}+>+${children.name.replace(/\s/g, "+")}`
                             );
                           }}
                         >
                           <div className="containerTextImg">
+                            <div className="containerImg">
+                              {item.image_url && (
+                                <>
+                                  {children.image_url !== null && (
+                                    <img
+                                      src={children.image_url}
+                                      alt={children.name}
+                                    />
+                                  )}
+                                </>
+                              )}
+                            </div>
                             <div className="containerText strong">
-                              {generalComponentsTranslation !== false &&
-                                generalComponentsTranslation?.header.labels
-                                  .labelModal09}{" "}
-                              {item.name}
+                              {children.name}
                             </div>
                           </div>
                         </a>
                       </li>
-                      {item.children.map((children, i) => (
-                        <li key={i}>
-                          <a
-                            className="children"
-                            onClick={() => {
-                              setOpenMenu(false);
-
-                              redirect(
-                                `/category/${item.name.replace(
-                                  /\s/g,
-                                  "+"
-                                )}/${item.name.replace(
-                                  /\s/g,
-                                  "+"
-                                )}+>+${children.name.replace(/\s/g, "+")}`
-                              );
-                            }}
-                          >
-                            <div className="containerTextImg">
-                              <div className="containerImg">
-                                {item.image_url && (
-                                  <>
-                                    {children.image_url !== null && (
-                                      <img
-                                        src={children.image_url}
-                                        alt={children.name}
-                                      />
-                                    )}
-                                  </>
-                                )}
-                              </div>
-                              <div className="containerText strong">
-                                {children.name}
-                              </div>
-                            </div>
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
         </ul>

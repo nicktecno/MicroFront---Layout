@@ -8,6 +8,7 @@ export function ModalGeneralSandwichMenu({
   setOpenMenu,
   menu,
   timerIdSandwich,
+  generalComponentsTranslation,
 }) {
   useEffect(() => {
     if (openMenu === true) {
@@ -46,7 +47,11 @@ export function ModalGeneralSandwichMenu({
               </S.closeButton>
             </div>
             <S.ContainerBox>
-              <BoxSandwichMenuContent menu={menu} setOpenMenu={setOpenMenu} />
+              <BoxSandwichMenuContent
+                menu={menu}
+                setOpenMenu={setOpenMenu}
+                generalComponentsTranslation={generalComponentsTranslation}
+              />
             </S.ContainerBox>
           </S.centerModal>
         </S.Modal>

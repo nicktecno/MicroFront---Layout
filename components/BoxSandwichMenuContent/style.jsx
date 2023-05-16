@@ -103,9 +103,11 @@ export const menu = styled.div`
       width: 100%;
       display: block;
       transition: 0.2s ease-out;
-      padding: 10px 15px;
+      padding: 5px 15px;
       cursor: pointer;
+      font-size: 14px;
       max-height: 260px;
+
       ${customMedia.lessThan("pobre")`
        font-size:14px;       
     `}
