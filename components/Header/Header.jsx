@@ -333,6 +333,7 @@ const HeaderComponent = ({
                 setOpenMenu={setOpenMenu}
                 refButtons={refButtons}
                 timerId={timerId}
+                setModal={setModal}
               />
             </div>
           </S.SecondaryHeader>

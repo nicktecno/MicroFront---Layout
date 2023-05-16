@@ -14,8 +14,8 @@ const HeaderMenu = ({
   setMenuState,
   refButtons,
   timerId,
+  setModal,
 }) => {
-  const { setModal } = useLocation();
   const [selectedItem, setSelectedItem] = useState([]);
   const [indexMenu, setIndexMenu] = useState(false);
 

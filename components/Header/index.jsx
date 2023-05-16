@@ -36,11 +36,9 @@ const Header = () => {
 
   return (
     <HeaderComponent
-      getNotificationStatus={getNotificationStatus}
-      unreadNotifications={unreadNotifications}
+      mktName={mktName}
       envGeo={envGeo}
       envMsLocation={envMsLocation}
-      mktName={mktName}
       api={api}
       cartLength={cartLength}
       openMenu={openMenu}
@@ -61,6 +59,8 @@ const Header = () => {
       setMenuState={setMenuState}
       menuState={menuState}
       logo={logo}
+      getNotificationStatus={getNotificationStatus}
+      unreadNotifications={unreadNotifications}
       timerIdSandwich={timerIdSandwich}
       refButtons={refButtons}
       timerId={timerId}
