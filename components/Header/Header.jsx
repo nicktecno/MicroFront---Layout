@@ -155,6 +155,7 @@ const HeaderComponent = ({
           setOpenMenu={setOpenMenu}
           menu={menu}
           timerIdSandwich={timerIdSandwich}
+          generalComponentsTranslation={generalComponentsTranslation}
         />
       )}
 

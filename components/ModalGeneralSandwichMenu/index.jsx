@@ -7,20 +7,26 @@ export function ModalGeneralSandwichMenu({
   openMenu,
   setOpenMenu,
   menu,
-  generalComponentsTranslation,
+  timerIdSandwich,
 }) {
   useEffect(() => {
     if (openMenu === true) {
       document.body.style.overflow = "hidden";
     }
   }, [openMenu]);
-
   return (
     <>
       {openMenu && (
-        <S.Modal className={"active"}>
+        <S.Modal
+          className={"active"}
+          onMouseOverCapture={() => {
+            document.body.style.overflow = "hidden";
+            window.clearTimeout(timerIdSandwich.current);
+            setOpenMenu(true);
+          }}
+        >
           <S.Transparente
-            onClick={() => {
+            onMouseOverCapture={() => {
               document.body.style.overflow = "auto";
 
               setOpenMenu(false);
@@ -40,11 +46,7 @@ export function ModalGeneralSandwichMenu({
               </S.closeButton>
             </div>
             <S.ContainerBox>
-              <BoxSandwichMenuContent
-                generalComponentsTranslation={generalComponentsTranslation}
-                menu={menu}
-                setOpenMenu={setOpenMenu}
-              />
+              <BoxSandwichMenuContent menu={menu} setOpenMenu={setOpenMenu} />
             </S.ContainerBox>
           </S.centerModal>
         </S.Modal>
