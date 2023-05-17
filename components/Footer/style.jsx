@@ -279,7 +279,7 @@ export const cazco = styled.div`
         bottom: 30px;
         z-index: 1;
 
-        margin-bottom: ${(props) => (props.routeWithSpace ? "80px" : "0px")};
+        margin-bottom: ${(props) => (props.routeWithSpace ? "60px" : "0px")};
     `}
 
   ${customMedia.lessThan("503px")`
