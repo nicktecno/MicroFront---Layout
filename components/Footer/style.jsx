@@ -270,14 +270,12 @@ export const cazco = styled.div`
     margin-top: -2px;
   }
 
-  ${customMedia.lessThan("notebook")`
- margin-bottom: ${(props) => (props.routeWithSpace ? "20px" : "0px")};
-        `}
-
   ${customMedia.lessThan("tablet")`
         position: relative;
         bottom: 30px;
         z-index: 1;
+
+        margin-bottom: ${(props) => (props.routeWithSpace ? "80px" : "0px")};
     `}
 
   ${customMedia.lessThan("503px")`
