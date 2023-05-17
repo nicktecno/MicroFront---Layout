@@ -324,4 +324,8 @@ export const ContainerFooter = styled.div`
 export const ContainerFooterSpecs = styled.div`
   display: flex;
   width: 100%;
+
+  ${customMedia.lessThan("notebook")`
+ padding-bottom: ${(props) => (props.routeWithSpace ? "20px" : "0px")};
+        `}
 `;

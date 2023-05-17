@@ -169,7 +169,7 @@ const FooterComponent = ({
         </S.imagens>
       </S.box>
       <S.ContainerFooter routeWithSpace={routeWithSpace}>
-        <S.ContainerFooterSpecs>
+        <S.ContainerFooterSpecs routeWithSpace={routeWithSpace}>
           <FooterSellerSpecs
             appUrl={appUrl}
             footerMktData={footerMktData}
