@@ -213,7 +213,7 @@ export const footerRed = styled.footer`
   background-color: var(--footer-background-color);
   margin-top: 200px;
   color: var(--footer-text-color);
-  padding: 30px 10px 40px 10px;
+  padding: 30px 10px 60px 10px;
   justify-content: center;
   align-items: center;
   display: flex;
