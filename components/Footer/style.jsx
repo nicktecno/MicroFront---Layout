@@ -212,6 +212,10 @@ export const imagens = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  a {
+    color: var(--title-color);
+  }
+
   .red {
     color: #fff;
 
