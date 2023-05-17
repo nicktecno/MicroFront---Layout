@@ -184,7 +184,7 @@ export const cartValue = styled.div`
 export const box = styled.div`
   display: none;
 
-  ${customMedia.lessThan("netbook")`
+  ${customMedia.lessThan("tablet")`
         display: block;
         width: 100%;
         height: 80px;
