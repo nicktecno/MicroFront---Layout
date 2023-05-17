@@ -313,7 +313,7 @@ export const ContainerFooter = styled.div`
   flex-direction: column;
 
   ${customMedia.lessThan("notebook")`
-  margin-bottom: ${(props) => (props.routeWithSpace ? "20px" : "0px")};
+ padding-bottom: ${(props) => (props.routeWithSpace ? "20px" : "0px")};
         `}
 
   ${customMedia.lessThan("tablet")`
