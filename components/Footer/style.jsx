@@ -270,7 +270,7 @@ export const cazco = styled.div`
     margin-top: -2px;
   }
 
-  ${customMedia.lessThan("netbook")`
+  ${customMedia.lessThan("tablet")`
         position: relative;
         bottom: 30px;
         z-index: 1;
@@ -311,6 +311,10 @@ export const transparente = styled.div`
 export const ContainerFooter = styled.div`
   display: flex;
   flex-direction: column;
+
+  ${customMedia.lessThan("notebook")`
+  margin-bottom: ${(props) => (props.routeWithSpace ? "10px" : "0px")};
+        `}
 
   ${customMedia.lessThan("tablet")`
   margin-bottom: ${(props) => (props.routeWithSpace ? "60px" : "0px")};
