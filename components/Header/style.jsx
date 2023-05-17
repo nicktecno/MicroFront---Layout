@@ -182,7 +182,7 @@ export const cartValue = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -33px;
+  margin-top: -25px;
   margin-left: 30px;
   ${customMedia.lessThan("notebook")`
       margin-left:20px;
