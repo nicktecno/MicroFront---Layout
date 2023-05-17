@@ -868,7 +868,7 @@ export const SecondaryHeader = styled.div`
   z-index: 10;
   font-weight: 550;
   ${customMedia.lessThan("tablet")` 
-   
+   display:none;
   `}
 
   .container {
@@ -924,7 +924,8 @@ export const locationMobile = styled.div`
   height: 30px;
   display: none;
   top: 60px;
-  background-color: var(--default-color-hover);
+  left: 0px;
+  background-color: var(--header-secondary-color);
   position: fixed;
   border-bottom: 1px solid var(--default-color-hover);
   z-index: 10;
