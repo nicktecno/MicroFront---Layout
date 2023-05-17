@@ -168,15 +168,15 @@ const FooterComponent = ({
           )}
         </S.imagens>
       </S.box>
-      <S.ContainerFooter routeWithSpace={routeWithSpace}>
-        <S.ContainerFooterSpecs routeWithSpace={routeWithSpace}>
+      <S.ContainerFooter>
+        <S.ContainerFooterSpecs>
           <FooterSellerSpecs
             appUrl={appUrl}
             footerMktData={footerMktData}
             generalComponentsTranslation={generalComponentsTranslation}
           />
         </S.ContainerFooterSpecs>
-        <S.cazco>
+        <S.cazco routeWithSpace={routeWithSpace}>
           {process.env.NEXT_PUBLIC_REACT_APP_MMP_STATE === "true" && (
             <>
               <select

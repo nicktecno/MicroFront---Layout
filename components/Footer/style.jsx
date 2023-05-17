@@ -270,6 +270,10 @@ export const cazco = styled.div`
     margin-top: -2px;
   }
 
+  ${customMedia.lessThan("notebook")`
+ margin-bottom: ${(props) => (props.routeWithSpace ? "20px" : "0px")};
+        `}
+
   ${customMedia.lessThan("tablet")`
         position: relative;
         bottom: 30px;
@@ -312,10 +316,6 @@ export const ContainerFooter = styled.div`
   display: flex;
   flex-direction: column;
 
-  ${customMedia.lessThan("notebook")`
- padding-bottom: ${(props) => (props.routeWithSpace ? "20px" : "0px")};
-        `}
-
   ${customMedia.lessThan("tablet")`
   margin-bottom: ${(props) => (props.routeWithSpace ? "60px" : "0px")};
         `}
@@ -324,8 +324,4 @@ export const ContainerFooter = styled.div`
 export const ContainerFooterSpecs = styled.div`
   display: flex;
   width: 100%;
-
-  ${customMedia.lessThan("notebook")`
- padding-bottom: ${(props) => (props.routeWithSpace ? "20px" : "0px")};
-        `}
 `;
